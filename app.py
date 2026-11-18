@@ -350,7 +350,7 @@ class MatchEngine:
         self.prev_sp = np.zeros(22)
         self.asym = self.base_asym.copy(); self.acwr = np.zeros(22)
         self.load_au = np.zeros(22)
-        self.risk = np.array(["LOW"] * 22)
+        self.risk = np.array(["LOW"] * 22, dtype="<U4")  # must fit "HIGH" (default <U3 would truncate it to "HIG")
         self.risk_cd = np.zeros(22)
         self.boost_until = np.zeros(22)
         self.dist_min = np.zeros((91, 22)); self.load_min = np.zeros((91, 22)); self.hsr_min = np.zeros((91, 22))
